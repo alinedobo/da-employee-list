@@ -6,7 +6,8 @@ from decimal import Decimal
 
 
 def employee_overview(request):
-    # Hier die entsprechenden Filter anlegen und die context-Variable definieren, um die Daten an das Template zu übergeben
+    # Hier die entsprechenden Filter anlegen und die context-Variable definieren, 
+    # um die Daten an das Template zu übergeben
 
     employees = Employee.objects.all()
 
@@ -21,4 +22,10 @@ def employee_overview(request):
 
     template_name = "employees_app/employee_list.html"
     
-    return render(request, 'employee_list.html', {'employee_list': employees, 'rich_employees': rich_employees, 'num_fivekay': num_fivekay, 'avg_sal_sales_rounded': avg_sal_sales_rounded, 'old_employees': old_employees})
+    return render(request, 'employee_list.html', {
+        'employee_list': employees, 
+        'rich_employees': rich_employees, 
+        'num_fivekay': num_fivekay, 
+        'avg_sal_sales_rounded': avg_sal_sales_rounded, 
+        'old_employees': old_employees}
+        )
